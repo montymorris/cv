@@ -35,9 +35,10 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
+      padding-top: 360px;
     }
 
     h1 {
@@ -135,8 +136,9 @@
 
     .hero-image img {
       width: auto;
-      height: 90px;
+      height: 340px;
       display: block;
+      border-radius: 16px;
     }
 
     .hover-caption {
@@ -148,9 +150,12 @@
       text-align: center;
       opacity: 0;
       transition: 0.2s ease;
-      font-size: 0.7rem;
-      padding: 4px;
+      font-size: 0.95rem;
+      padding: 6px;
       background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
     }
 
     .hero-image:hover .hover-caption {
