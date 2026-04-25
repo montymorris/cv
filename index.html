@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monty Morris</title>
+
+  <style>
+    @font-face {
+      font-family: "Akkurat Pro";
+      src: local("Akkurat Pro"), local("Akkurat");
+    }
+
+    @font-face {
+      font-family: "Avenir";
+      src: local("Avenir"), local("Avenir Next");
+    }
+
+    :root {
+      --bg: #FFFDDB;
+      --text: #586c5c;
+      --accent: #6f8f76;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Avenir", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Avenir", sans-serif;
+      font-weight: bold;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 2rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      font-family: "Akkurat Pro", sans-serif;
+      padding: 0.7rem 1.4rem;
+      border: 2px solid var(--text);
+      background: transparent;
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: inherit;
+    }
+
+    .btn:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn.contact {
+      padding: 0.7rem 1.4rem;
+    }
+
+    .contact-info {
+      position: absolute;
+      top: calc(50% + 120px);
+      text-align: center;
+      display: none;
+      font-size: 0.95rem;
+      line-height: 1.2;
+    }
+
+    .contact-info p {
+      margin: 0;
+    }
+
+    .email-link {
+      text-decoration: underline;
+      color: inherit;
+    }
+
+    .phone-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Mobile layout fixes */
+    @media (max-width: 600px) {
+      .links {
+        flex-direction: row;
+      }
+
+      .contact-info {
+        top: calc(50% + 160px);
+      }
+    }
+
+    /* CV viewer responsiveness */
+    .viewer {
+      width: 100%;
+      height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Monty Morris</h1>
+  <p>Sound Engineer & Theatre Technician</p>
+
+  <div class="links">
+    <a href="cv.html" class="btn" target="_blank">View CV</a>
+    <a href="https://www.linkedin.com/in/monty-morris" class="btn" target="_blank">LinkedIn</a>
+    <button class="btn contact" onclick="toggleContact()">Contact</button>
+  </div>
+
+  <div class="contact-info" id="contactInfo">
+    <p><a href="tel:07587434466" class="phone-link">Phone: 07587 434466</a></p>
+    <p>Email: <a href="mailto:montymorris01@gmail.com" class="email-link">montymorris01@gmail.com</a></p>
+  </div>
+
+  <script>
+    function toggleContact() {
+      const el = document.getElementById('contactInfo');
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
