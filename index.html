@@ -126,9 +126,42 @@
       height: 100%;
       border: none;
     }
+
+    .hero-image {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hover-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: 0.2s ease;
+      padding: 10px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    }
+
+    .hero-image:hover .hover-caption {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+
+  <div class="hero-image">
+    <img src="mm-photo.jpg" alt="">
+    <div class="hover-caption">Kirsten McTernan Photography</div>
+  </div>
 
   <h1>Monty Morris</h1>
   <p>Sound Engineer & Theatre Technician</p>
