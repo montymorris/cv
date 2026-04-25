@@ -17,7 +17,7 @@
     }
 
     :root {
-      --bg: #fffdd;
+      --bg: #FFFDDB;
       --text: #586c5c;
       --accent: #6f8f76;
     }
@@ -34,14 +34,10 @@
       color: var(--text);
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 600px;
     }
 
     h1 {
@@ -58,22 +54,22 @@
 
     .links {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
     }
 
     .btn {
       font-family: "Akkurat Pro", sans-serif;
-      padding: 0.8rem 1.4rem;
+      padding: 0.7rem 1.4rem;
       border: 2px solid var(--text);
       background: transparent;
       color: var(--text);
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease;
-      min-width: 160px; /* ensures equal sizing */
-      text-align: center;
+      font-size: inherit;
     }
 
     .btn:hover {
@@ -81,88 +77,53 @@
       color: var(--bg);
     }
 
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
+    .btn.contact {
+      padding: 0.7rem 1.4rem;
     }
 
-    .modal-content {
-      background: var(--bg); /* solid background */
-      padding: 2rem;
-      border-radius: 10px;
+    .contact-info {
+      position: absolute;
+      top: calc(50% + 120px);
       text-align: center;
-      max-width: 90%;
-      width: 300px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: none;
+      font-size: 0.95rem;
+      line-height: 1.2;
     }
 
-    .modal-content h2 {
-      font-family: "Avenir", sans-serif;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    .close {
-      margin-top: 1.5rem;
-      display: inline-block;
-      cursor: pointer;
-      font-family: "Akkurat Pro", sans-serif;
-      border: 1px solid var(--text);
-      padding: 0.5rem 1rem;
+    .contact-info p {
+      margin: 0;
     }
 
     @media (max-width: 600px) {
       .links {
         flex-direction: column;
       }
+      .contact-info {
+        top: calc(50% + 160px);
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Monty Morris</h1>
-    <p>Sound Engineer & Theatre Technician</p>
+  <h1>Monty Morris</h1>
+  <p>Sound Engineer & Theatre Technician</p>
 
-    <div class="links">
-      <a href="montymorris-cv.pdf" class="btn" target="_blank">View CV</a>
-      <a href="https://www.linkedin.com/in/monty-morris" class="btn" target="_blank">LinkedIn</a>
-      <button class="btn" onclick="openModal()">Contact</button>
-    </div>
+  <div class="links">
+    <a href="cv.html" class="btn" target="_blank">View CV</a>
+    <a href="https://www.linkedin.com/in/monty-morris" class="btn" target="_blank">LinkedIn</a>
+    <button class="btn contact" onclick="toggleContact()">Contact</button>
   </div>
 
-  <div class="modal" id="contactModal">
-    <div class="modal-content">
-      <h2>Contact</h2>
-      <p>📞 07587 434466</p>
-      <p>✉️ montymorris01@gmail.com</p>
-      <div class="close" onclick="closeModal()">Close</div>
-    </div>
+  <div class="contact-info" id="contactInfo">
+    <p>Phone: 07587 434466</p>
+    <p>Email: montymorris01@gmail.com</p>
   </div>
 
   <script>
-    function openModal() {
-      document.getElementById('contactModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('contactModal').style.display = 'none';
-    }
-
-    window.onclick = function(e) {
-      const modal = document.getElementById('contactModal');
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
+    function toggleContact() {
+      const el = document.getElementById('contactInfo');
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
   </script>
 
