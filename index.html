@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monty Morris</title>
 
-  <!-- Fonts (fallbacks included) -->
   <style>
     @font-face {
       font-family: "Akkurat Pro";
@@ -35,10 +34,14 @@
       color: var(--text);
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
     }
 
     h1 {
@@ -69,6 +72,8 @@
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease;
+      min-width: 160px; /* ensures equal sizing */
+      text-align: center;
     }
 
     .btn:hover {
@@ -83,18 +88,21 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       display: none;
       justify-content: center;
       align-items: center;
+      z-index: 999;
     }
 
     .modal-content {
-      background: var(--bg);
+      background: var(--bg); /* solid background */
       padding: 2rem;
-      border-radius: 8px;
+      border-radius: 10px;
       text-align: center;
       max-width: 90%;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     .modal-content h2 {
@@ -104,7 +112,7 @@
     }
 
     .close {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       display: inline-block;
       cursor: pointer;
       font-family: "Akkurat Pro", sans-serif;
@@ -121,22 +129,23 @@
 </head>
 <body>
 
-  <h1>Monty Morris</h1>
-  <p>Sound • Theatre • Technology</p>
+  <div class="container">
+    <h1>Monty Morris</h1>
+    <p>Sound • Theatre • Technology</p>
 
-  <div class="links">
-    <a href="montymorris-cv.pdf" class="btn" target="_blank">View CV</a>
-    <a href="https://www.linkedin.com/in/monty-morris" class="btn" target="_blank">LinkedIn</a>
-    <button class="btn" onclick="openModal()">Contact</button>
+    <div class="links">
+      <a href="montymorris-cv.pdf" class="btn" target="_blank">View CV</a>
+      <a href="https://www.linkedin.com/in/monty-morris" class="btn" target="_blank">LinkedIn</a>
+      <button class="btn" onclick="openModal()">Contact</button>
+    </div>
   </div>
 
-  <!-- Modal -->
   <div class="modal" id="contactModal">
     <div class="modal-content">
       <h2>Contact</h2>
       <p>📞 07587 434466</p>
       <p>✉️ montymorris01@gmail.com</p>
-      <span class="close" onclick="closeModal()">Close</span>
+      <div class="close" onclick="closeModal()">Close</div>
     </div>
   </div>
 
