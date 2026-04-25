@@ -94,13 +94,37 @@
       margin: 0;
     }
 
+    .email-link {
+      text-decoration: underline;
+      color: inherit;
+    }
+
+    .phone-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Mobile layout fixes */
     @media (max-width: 600px) {
       .links {
         flex-direction: row;
       }
+
       .contact-info {
         top: calc(50% + 160px);
       }
+    }
+
+    /* CV viewer responsiveness */
+    .viewer {
+      width: 100%;
+      height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
@@ -116,8 +140,8 @@
   </div>
 
   <div class="contact-info" id="contactInfo">
-    <p><a href="tel:07587434466" style="color: inherit; text-decoration: none;">Phone: 07587 434466</a></p>
-    <p><a href="mailto:montymorris01@gmail.com" style="color: inherit; text-decoration: underline;">montymorris01@gmail.com</a></p>
+    <p><a href="tel:07587434466" class="phone-link">Phone: 07587 434466</a></p>
+    <p>Email: <a href="mailto:montymorris01@gmail.com" class="email-link">montymorris01@gmail.com</a></p>
   </div>
 
   <script>
