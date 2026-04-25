@@ -94,9 +94,10 @@
       margin: 0;
     }
 
+    /* Keep buttons horizontal on mobile */
     @media (max-width: 600px) {
       .links {
-        flex-direction: column;
+        flex-direction: row;
       }
       .contact-info {
         top: calc(50% + 160px);
@@ -117,7 +118,7 @@
 
   <div class="contact-info" id="contactInfo">
     <p>Phone: 07587 434466</p>
-    <p>Email: montymorris01@gmail.com</p>
+    <p><a href="mailto:montymorris01@gmail.com" style="color: inherit; text-decoration: none;">Email: montymorris01@gmail.com</a></p>
   </div>
 
   <script>
